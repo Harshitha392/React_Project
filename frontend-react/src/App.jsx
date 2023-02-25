@@ -54,7 +54,16 @@ function App() {
         </Container>
       </Navbar>
       <h1 className="text-center">Hello World</h1>
-      
+      <InputGroup className="mb-3">
+        <Form.Control
+          placeholder="Recipient's username"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <Button variant="outline-success" id="button-addon2">
+        <i class="fa fa-add"> </i>
+        </Button>
+      </InputGroup>
     </div>
   )
 }
