@@ -45,17 +45,16 @@ function App() {
 
   return (
     <div>
-      {/* <h1>Hello world</h1>
-      <button onClick={increaseCount}>Click to increase count {number}</button>
-      <component1/> */}
-      {/* stringify */}
-      <ul>
-        {/* <li>item1</li> */}
-        {data.map((value) =>{//to display list of object instead of for loop inside jsx data.map means we are iterating over all the values of object and
-        //returning list of li tags
-          return <li>{value.title}</li>
-        })}
-      </ul>
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+          <Button variant="primary"><i class="fas fa-moon fa-lg fa-fw"></i></Button>{' '}
+          </Nav>
+        </Container>
+      </Navbar>
+      <h1 className="text-center">Hello World</h1>
+      
     </div>
   )
 }
