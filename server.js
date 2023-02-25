@@ -1,9 +1,21 @@
-require("dotenv").config();
-const mongoose =require("mongoose");
-const express = require('express');
-const todoLib = require("./backend/Lib/todoLib");
-const todoModel = require("./backend/models/todoModel");
+// require("dotenv").config();
+// const mongoose =require("mongoose");
+// const express = require('express');
+// const todoLib = require("./backend/Lib/todoLib");
+// const todoModel = require("./backend/models/todoModel");
+// const app = express();
+import {config} from "dotenv";//instead of using the above methods
+config();
+//const userLib=require("./backend/Lib/userLib")
+// import userLib from "./backend/Lib/userLib.js";
+import * as userLib from "./backend/Lib/userLib.js";
+//const mongoose =require("mongoose");
+import mongoose from "mongoose";
+// const express = require('express');
+import express, {request} from "express";
 const app = express();
+
+
 const port = process.env.PORT || 3000;
 const options = {
 	extensions:['htm','html','css','js','ico','jpg','jpeg','png','svg','pdf'],
