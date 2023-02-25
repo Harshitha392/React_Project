@@ -5,65 +5,58 @@ import {useEffect} from 'react'
 import component1 from './component1';
 
 function App() {
-  // const [count, setCount] = useState(0)
-  // let number =0;
-  const [number, setNumber] = useState(0);
-  const [person,setPerson] = useState({
-    name: "harshitha",
-    age:21
-  })
-
-  const [numberList,setNumberList] = useState([0]);
-
-  const [data,setData] = useState([]);
-
-  const increaseCount = () =>{
-    setNumber(number+1);
-    console.log(number);
-  }
-
-  const changeName = () =>{
-    setPerson(prev => { //previours value was {name : "harshitha",age:21}
-      return {...prev, name:"harshi"} // creates an object like {name : "harshi",age:21} name only changes age only changes
-    })
-  }
-
-  const addValuse = () =>{
-    setNumber(number+1);
-    setNumberList (prev =>{
-      return [...prev,"number"];
-    })
-  }
-
-  useEffect(() => {
-    console.log("this component has mounted");
-    fetch("https://jsonplaceholder.typicode.com/posts").then(res=>res.json()).then(data=>{
-      //console.log(data);
-      setData(data);
-    })
-  },[])
+  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <Navbar bg="light" variant="light">
+    <div className="App">
+       <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
           <Button variant="primary"><i class="fas fa-moon fa-lg fa-fw"></i></Button>{' '}
+
           </Nav>
         </Container>
       </Navbar>
-      <h1 className="text-center">Hello World</h1>
-      <InputGroup className="mb-3">
+      <h1 className="text-center">Hello world </h1>
+      <div style={{
+    display: "flex",
+    alignItems : "center",
+    justifyContent :"center"
+}}> 
+
+
+
+      <InputGroup style={{width:"300px"}} className="mb-3">
         <Form.Control
           placeholder="Recipient's username"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
         />
         <Button variant="outline-success" id="button-addon2">
-        <i class="fa fa-add"> </i>
+        <i class="fa fa-add"></i>
         </Button>
       </InputGroup>
+      </div>
+      <div className="mt-4">
+                <Nav justify variant="tabs" defaultActiveKey="?list=BLIND75">
+                    <Nav.Item >
+                        <Nav.Link eventKey="?list=BLIND75">
+                            <span className="tab-font">Todos</span>
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item >
+                        <Nav.Link eventKey="link-1">
+                            <span className="tab-font">Completed</span>
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-2">
+                            <span className="tab-font">Deleted</span>
+                        </Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </div>
     </div>
   )
 }
